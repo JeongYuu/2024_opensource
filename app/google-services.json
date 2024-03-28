@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "577600278277",
+    "project_id": "opensource-app-dac5c",
+    "storage_bucket": "opensource-app-dac5c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:577600278277:android:f8e2730d4d101b70c9716c",
+        "android_client_info": {
+          "package_name": "com.example.prac01"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCvLrYvEqoX-6cgaIy02mdj8K7JGJnLaY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
