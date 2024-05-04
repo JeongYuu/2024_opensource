@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class Login extends AppCompatActivity{
+public class LoginActivity extends AppCompatActivity{
     //private static final int RC_SIGN_IN = 10;
 
     // FirebaseAuth의 인스턴스를 선언
@@ -64,7 +64,7 @@ public class Login extends AppCompatActivity{
                         if (task.isSuccessful()) {
                             mAuth.getCurrentUser();
                             startToast("로그인에 성공하였습니다.");
-                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         } else {

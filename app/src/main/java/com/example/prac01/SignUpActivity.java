@@ -12,7 +12,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-public class SignUp extends AppCompatActivity {
+public class SignUpActivity extends AppCompatActivity {
     //private static final int RC_SIGN_IN = 10;
 
     // FirebaseAuth의 인스턴스를 선언
@@ -102,7 +102,7 @@ public class SignUp extends AppCompatActivity {
         if (view.getId() == R.id.signUpButton) {
             signUp();
         } else if (view.getId() == R.id.gotoLoginButton) {
-            Intent intent = new Intent(SignUp.this, Login.class);
+            Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
@@ -128,7 +128,7 @@ public class SignUp extends AppCompatActivity {
                                 db = FirebaseFirestore.getInstance();
                                 db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("userInfo").document("Info").set(user);
                                 startToast("회원가입에 성공하였습니다.");
-                                Intent intent = new Intent(SignUp.this, MainActivity.class);
+                                Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             } else if (task.getException() != null) {

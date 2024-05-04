@@ -38,20 +38,20 @@
             android:orientation="horizontal"
             android:padding="30dp">
 
+
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/imageView8"
                 android:layout_width="50dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:foreground="@drawable/sandwitch"
-                android:src="@tools:sample/avatars" />
+                android:layout_height="100dp"
+                android:layout_weight="4"
+                android:foreground="@drawable/sandwitch" />
 
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="103dp"
                 android:layout_height="94dp"
                 android:layout_marginLeft="20dp"
-                android:layout_weight="1"
+                android:layout_weight="6"
                 android:paddingStart="10dp"
                 android:text="wjddbwls1230"
                 android:textSize="24sp" />
@@ -85,8 +85,26 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="20dp" />
+            android:layout_height="273dp"
+            android:padding="20dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_gravity="center_horizontal"
+            android:background="#C3FEBF00" />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:backgroundTint="#22610A"
+            android:text="로그아웃" />
 
     </LinearLayout>
 

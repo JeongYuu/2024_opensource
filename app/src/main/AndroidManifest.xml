@@ -21,11 +21,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="SignUp"
+        <activity android:name=".SignUpActivity"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name="Login"
+        <activity android:name=".LoginActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".UserpageActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".MenuActivity"
             android:screenOrientation="portrait">
 
         </activity>
