@@ -10,12 +10,14 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignUp extends AppCompatActivity {
-    private static final int RC_SIGN_IN = 10;
+    //private static final int RC_SIGN_IN = 10;
 
     // FirebaseAuth의 인스턴스를 선언
     private FirebaseAuth mAuth;
+    private FirebaseFirestore db;
     /*private GoogleSignInClient mGoogleSignInClient;
     private final ActivityResultLauncher<Intent> googleSignInLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(), result -> {
@@ -59,7 +61,7 @@ public class SignUp extends AppCompatActivity {
 
 
         findViewById(R.id.signUpButton).setOnClickListener(onClickListener);
-        //findViewById(R.id.gotoLoginButton).setOnClickListener(onClickListener);
+        findViewById(R.id.gotoLoginButton).setOnClickListener(onClickListener);
 
     }
 
@@ -122,6 +124,9 @@ public class SignUp extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 // Sign in success, update UI with the signed-in user's information
                                 mAuth.getCurrentUser();
+                                User user = new User(email, password);
+                                db = FirebaseFirestore.getInstance();
+                                db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("userInfo").document("Info").set(user);
                                 startToast("회원가입에 성공하였습니다.");
                                 Intent intent = new Intent(SignUp.this, MainActivity.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

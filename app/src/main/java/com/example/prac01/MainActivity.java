@@ -11,7 +11,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
-
     private Button button;
 
     @Override
@@ -29,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(intent);
                 } else {
                     FirebaseAuth.getInstance().signOut();
+                    button.setText("로그인");
                 }
             }
         });
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         } else {
-
+            button.setText("로그아웃");
             // 회원가입 or 로그인
             /*DocumentReference userRef = db.collection("users").document(user.getUid());
 
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
             userData.put("email", user.getEmail());
             userData.put("userId", user.getUid());
             userRef.set(userData);*/
-
 
         }
     }

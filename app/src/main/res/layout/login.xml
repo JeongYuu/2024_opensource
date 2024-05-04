@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical">
 
 
@@ -29,8 +30,7 @@
             <ImageView
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                 />
+                android:layout_height="30dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -74,25 +74,10 @@
                 android:id="@+id/loginButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#DADADA"
+                android:backgroundTint="#FFC107"
                 android:fontFamily="sans-serif-medium"
                 android:text="로그인"
                 android:textColor="#000000" />
-
-            <Button
-                android:id="@+id/gotoPasswordResetButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="#DADADA"
-                android:fontFamily="sans-serif-medium"
-                android:text="비밀번호 재설정"
-                android:textColor="#000000" />
-
-            <com.google.android.gms.common.SignInButton
-                android:id="@+id/btn_google_sign_in"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true" />
 
         </LinearLayout>
     </LinearLayout>
