@@ -52,7 +52,7 @@ public class PremiumActivity extends AppCompatActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(PremiumActivity.this, UserpageActivity.class);
+                    Intent intent = new Intent(PremiumActivity.this, UserPageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }

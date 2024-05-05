@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(MainActivity.this, UserpageActivity.class);
+                    Intent intent = new Intent(MainActivity.this, UserPageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }

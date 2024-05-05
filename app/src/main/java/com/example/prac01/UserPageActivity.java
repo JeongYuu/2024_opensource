@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class UserpageActivity extends AppCompatActivity {
+public class UserPageActivity extends AppCompatActivity {
 
     private Button logout;
 
@@ -23,7 +23,7 @@ public class UserpageActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut(); //로그아웃
-                Intent intent = new Intent(UserpageActivity.this, LoginActivity.class);
+                Intent intent = new Intent(UserPageActivity.this, LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }

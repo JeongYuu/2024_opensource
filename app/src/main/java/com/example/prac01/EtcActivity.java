@@ -52,7 +52,7 @@ public class EtcActivity extends AppCompatActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(EtcActivity.this, UserpageActivity.class);
+                    Intent intent = new Intent(EtcActivity.this, UserPageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }

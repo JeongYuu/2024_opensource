@@ -51,7 +51,7 @@ public class DietActivity extends AppCompatActivity {
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(DietActivity.this, UserpageActivity.class);
+                    Intent intent = new Intent(DietActivity.this, UserPageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
