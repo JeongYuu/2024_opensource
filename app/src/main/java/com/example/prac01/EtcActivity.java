@@ -94,7 +94,7 @@ public class EtcActivity extends AppCompatActivity {
         etc_menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EtcActivity.this, MenuActivity.class);
+                Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -102,7 +102,7 @@ public class EtcActivity extends AppCompatActivity {
         etc_menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EtcActivity.this, MenuActivity.class);
+                Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -110,7 +110,7 @@ public class EtcActivity extends AppCompatActivity {
         etc_menu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EtcActivity.this, MenuActivity.class);
+                Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -118,7 +118,7 @@ public class EtcActivity extends AppCompatActivity {
         etc_menu4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EtcActivity.this, MenuActivity.class);
+                Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -126,7 +126,7 @@ public class EtcActivity extends AppCompatActivity {
         etc_menu5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EtcActivity.this, MenuActivity.class);
+                Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -134,7 +134,7 @@ public class EtcActivity extends AppCompatActivity {
         etc_menu6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(EtcActivity.this, MenuActivity.class);
+                Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }

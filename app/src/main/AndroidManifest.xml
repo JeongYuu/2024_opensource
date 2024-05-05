@@ -37,7 +37,7 @@
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".EtcMenuActivity"
+        <activity android:name=".MenuEtcActivity"
             android:screenOrientation="portrait">
 
         </activity>

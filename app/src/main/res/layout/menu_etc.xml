@@ -21,7 +21,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="20dp"
                 android:clipToPadding="false"
-                android:foreground="@drawable/bmt"
+                android:foreground="@drawable/c5"
                 android:paddingLeft="30px"
                 android:paddingRight="30px"
                 app:cardCornerRadius="30dp"
@@ -75,14 +75,14 @@
                 android:background="#C3FEBF00" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/review_button"
                 android:layout_width="167dp"
                 android:layout_height="57dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:backgroundTint="#FFC107"
                 android:shadowColor="#090808"
-                android:text="리뷰 작성🤤"
+                android:text="리뷰🤤"
                 android:textColor="#000000"
                 android:textSize="20sp" />
         </LinearLayout>
