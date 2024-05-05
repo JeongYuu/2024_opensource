@@ -10,24 +10,24 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+public class PremiumActivity extends AppCompatActivity {
     private Button myPage;
     private Button generalbutton;
     private Button dietbutton;
     private Button premiumbutton;
     private Button etcbutton;
 
-    private LinearLayout general_menu1;
-    private LinearLayout general_menu2;
-    private LinearLayout general_menu3;
-    private LinearLayout general_menu4;
-    private LinearLayout general_menu5;
-    private LinearLayout general_menu6;
+    private LinearLayout premium_menu1;
+    private LinearLayout premium_menu2;
+    private LinearLayout premium_menu3;
+    private LinearLayout premium_menu4;
+    private LinearLayout premium_menu5;
+    private LinearLayout premium_menu6;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.premium);
 
         myPage = findViewById(R.id.mypage); //화면이랑 id랑 연결해주는거
 
@@ -36,23 +36,23 @@ public class MainActivity extends AppCompatActivity {
         premiumbutton = findViewById(R.id.premiumbutton);
         etcbutton = findViewById(R.id.etcbutton);
 
-        general_menu1 = findViewById(R.id.general_menu1);
-        general_menu2 = findViewById(R.id.general_menu2);
-        general_menu3 = findViewById(R.id.general_menu3);
-        general_menu4 = findViewById(R.id.general_menu4);
-        general_menu5 = findViewById(R.id.general_menu5);
-        general_menu6 = findViewById(R.id.general_menu6);
+        premium_menu1 = findViewById(R.id.premium_menu1);
+        premium_menu2 = findViewById(R.id.premium_menu2);
+        premium_menu3 = findViewById(R.id.premium_menu3);
+        premium_menu4 = findViewById(R.id.premium_menu4);
+        premium_menu5 = findViewById(R.id.premium_menu5);
+
 
 
         myPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-                    Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+                    Intent intent = new Intent(PremiumActivity.this, SignUpActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
-                    Intent intent = new Intent(MainActivity.this, UserpageActivity.class);
+                    Intent intent = new Intent(PremiumActivity.this, UserpageActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         generalbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, MainActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         dietbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, DietActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, DietActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -77,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
         premiumbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, PremiumActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, PremiumActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -85,56 +85,48 @@ public class MainActivity extends AppCompatActivity {
         etcbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, EtcActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, EtcActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
 
-        general_menu1.setOnClickListener(new View.OnClickListener() {
+        premium_menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, MenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
-        general_menu2.setOnClickListener(new View.OnClickListener() {
+        premium_menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, MenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
-        general_menu3.setOnClickListener(new View.OnClickListener() {
+        premium_menu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, MenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
-        general_menu4.setOnClickListener(new View.OnClickListener() {
+        premium_menu4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, MenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
         });
-        general_menu5.setOnClickListener(new View.OnClickListener() {
+        premium_menu5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-            }
-        });
-        general_menu6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MenuActivity.class);
+                Intent intent = new Intent(PremiumActivity.this, MenuActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -143,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+            Intent intent = new Intent(PremiumActivity.this, SignUpActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }

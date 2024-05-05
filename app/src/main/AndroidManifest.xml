@@ -37,6 +37,27 @@
             android:screenOrientation="portrait">
 
         </activity>
+        <activity android:name=".EtcmenuActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".ReviewActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".DietActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".PremiumActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".EtcActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+
     </application>
 
 </manifest>

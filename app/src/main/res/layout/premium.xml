@@ -109,7 +109,7 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/generalbutton"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -117,7 +117,7 @@
                     android:text="일반" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/dietbutton"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -125,7 +125,7 @@
                     android:text="다이어트" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/premiumbutton"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -133,7 +133,7 @@
                     android:text="고급" />
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/etcbutton"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -142,72 +142,9 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/premium_menu1"
                 android:layout_width="match_parent"
                 android:layout_height="132dp"
-                android:clipToPadding="false"
-                android:orientation="horizontal"
-                android:paddingLeft="50px"
-                android:paddingTop="40px"
-                android:paddingRight="50px"
-                android:paddingBottom="40px">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="174dp"
-                    android:layout_height="112dp"
-                    android:layout_gravity="center"
-                    android:clipToPadding="false"
-                    android:foreground="@drawable/bmt"
-                    android:paddingLeft="30px"
-                    android:paddingRight="30px"
-                    app:cardCornerRadius="30dp"
-                    app:cardUseCompatPadding="false"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent">
-
-                </androidx.cardview.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="이탈리안 BMT"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="단품 6900원" />
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="세트 8500원" />
-
-                    <TextView
-                        android:id="@+id/textView5"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
-                        android:text="칼로리 299kcal" />
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#00FEFEFE"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
                 android:paddingLeft="50px"
@@ -236,41 +173,39 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="이탈리안 BMT"
-                        android:textSize="20sp" />
+                        android:text="에그마요"
+                        android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="단품 6900원" />
+                        android:text="단품 7000원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="세트 8500원" />
+                        android:text="세트 9600원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="칼로리 299kcal" />
+                        android:text="칼로리 416kcal" />
                 </LinearLayout>
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/premium_menu2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="#00FEFEFE"
                 android:clipToPadding="false"
                 android:orientation="horizontal"
                 android:paddingLeft="50px"
@@ -299,29 +234,25 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="이탈리안 BMT"
-                        android:textSize="20sp" />
+                        android:text="서브웨이 클럽"
+                        android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="단품 6900원" />
+                        android:text="단품 8600원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="세트 8500원" />
+                        android:text="세트 11200원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
@@ -332,6 +263,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/premium_menu3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
@@ -346,7 +278,7 @@
                     android:layout_height="112dp"
                     android:layout_gravity="center"
                     android:clipToPadding="false"
-                    android:foreground="@drawable/club"
+                    android:foreground="@drawable/stakeandcheese"
                     android:paddingLeft="30px"
                     android:paddingRight="30px"
                     app:cardCornerRadius="30dp"
@@ -362,39 +294,36 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="이탈리안 BMT"
-                        android:textSize="20sp" />
+                        android:text="스테이크 앤 치즈"
+                        android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="단품 6900원" />
+                        android:text="단품 9900원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="세트 8500원" />
+                        android:text="세트 12500원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="칼로리 299kcal" />
+                        android:text="칼로리 355kcal" />
                 </LinearLayout>
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/premium_menu4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
@@ -409,7 +338,7 @@
                     android:layout_height="112dp"
                     android:layout_gravity="center"
                     android:clipToPadding="false"
-                    android:foreground="@drawable/club"
+                    android:foreground="@drawable/blt"
                     android:paddingLeft="30px"
                     android:paddingRight="30px"
                     app:cardCornerRadius="30dp"
@@ -425,39 +354,36 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="이탈리안 BMT"
-                        android:textSize="20sp" />
+                        android:text="BLT"
+                        android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="단품 6900원" />
+                        android:text="단품 8600원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="세트 8500원" />
+                        android:text="세트 11200원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="칼로리 299kcal" />
+                        android:text="칼로리 300kcal" />
                 </LinearLayout>
 
 
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/premium_menu5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:clipToPadding="false"
@@ -472,7 +398,7 @@
                     android:layout_height="112dp"
                     android:layout_gravity="center"
                     android:clipToPadding="false"
-                    android:foreground="@drawable/club"
+                    android:foreground="@drawable/shrimp"
                     android:paddingLeft="30px"
                     android:paddingRight="30px"
                     app:cardCornerRadius="30dp"
@@ -488,33 +414,29 @@
                     android:orientation="vertical">
 
                     <TextView
-                        android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="이탈리안 BMT"
-                        android:textSize="20sp" />
+                        android:text="쉬림프"
+                        android:textSize="20dp" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="단품 6900원" />
+                        android:text="단품 10600원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="세트 8500원" />
+                        android:text="세트 13200원" />
 
                     <TextView
-                        android:id="@+id/textView5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:text="칼로리 299kcal" />
+                        android:text="칼로리 241kcal" />
                 </LinearLayout>
 
 
