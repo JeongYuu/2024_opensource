@@ -3,6 +3,7 @@ package com.example.prac01;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,6 +18,8 @@ public class LoginActivity extends AppCompatActivity{
 
     // FirebaseAuth의 인스턴스를 선언
     private FirebaseAuth mAuth;
+
+    private Button signupbutton;
     /*    private GoogleSignInClient mGoogleSignInClient;
 
         private final ActivityResultLauncher<Intent> googleSignInLauncher = registerForActivityResult(
@@ -42,7 +45,18 @@ public class LoginActivity extends AppCompatActivity{
 
         mAuth = FirebaseAuth.getInstance();
 
+        signupbutton = findViewById(R.id.signupbutton);
+
         findViewById(R.id.loginButton).setOnClickListener(onClickListener);
+
+        signupbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
     }
 
     View.OnClickListener onClickListener = view -> {

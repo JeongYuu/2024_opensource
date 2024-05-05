@@ -79,6 +79,15 @@
                 android:text="로그인"
                 android:textColor="#000000" />
 
+            <Button
+                android:id="@+id/signupbutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#FFC107"
+                android:fontFamily="sans-serif-medium"
+                android:text="회원가입"
+                android:textColor="#000000" />
+
         </LinearLayout>
     </LinearLayout>
 

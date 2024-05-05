@@ -52,30 +52,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/textView7"
-                    android:layout_width="106dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:gravity="center"
+                    android:padding="3dp"
                     android:text="빵🥖"
-                    android:textSize="34sp" />
+                    android:textSize="35dp" />
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/typeofbread"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="35dp"
+                    android:layout_gravity="start"
                     android:gravity="center"
-                    android:text="파마산 오레가노 또는 파마산 오레가노"
-                    android:textSize="20sp" />
+                    android:text="파마산오레가노파마산오레가노파마산오레가노파마산오레가노"
+                    android:textSize="25dp" />
             </LinearLayout>
 
             <View
@@ -87,31 +83,26 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/textView8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:gravity="center"
+                    android:padding="3dp"
                     android:text="치즈🧀"
-                    android:textSize="34sp" />
+                    android:textSize="30dp" />
 
                 <TextView
-                    android:id="@+id/textView12"
+                    android:id="@+id/typeofcheese"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="35dp"
+                    android:layout_gravity="start"
                     android:gravity="center"
-                    android:text="모짜렐라 치즈"
-                    android:textSize="20sp" />
-
+                    android:text="슈레드 치즈 또는 슈레드 치즈"
+                    android:textSize="25dp" />
             </LinearLayout>
 
             <View
@@ -119,35 +110,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
                 android:background="#C3FEBF00" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/textView10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:gravity="center"
+                    android:padding="3dp"
                     android:text="소스🥫"
-                    android:textSize="34sp" />
+                    android:textSize="30dp" />
 
                 <TextView
-                    android:id="@+id/textView13"
+                    android:id="@+id/typeofsauce"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="35dp"
+                    android:layout_gravity="start"
                     android:gravity="center"
                     android:text="스위트 어니언과 칠리 소스 또는 올리브 오일과 후추 또는 스윗트 칠리 소스"
-                    android:textSize="20sp" />
+                    android:textSize="25dp" />
             </LinearLayout>
 
             <View
@@ -155,37 +141,30 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
                 android:background="#C3FEBF00" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="20dp">
 
                 <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="255dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
                     android:layout_marginRight="20dp"
-                    android:layout_marginBottom="20dp"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="추가🥓"
-                    android:textSize="34sp" />
+                    android:padding="3dp"
+                    android:text="야채🥗"
+                    android:textSize="30dp" />
 
                 <TextView
-                    android:id="@+id/textView14"
+                    android:id="@+id/typeofvege"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
-                    android:layout_marginBottom="35dp"
-                    android:layout_weight="1"
+                    android:layout_gravity="start"
                     android:gravity="center"
-                    android:text="없음"
-                    android:textSize="20sp" />
+                    android:text="야채는 취향껏"
+                    android:textSize="25dp" />
             </LinearLayout>
 
             <View
@@ -193,7 +172,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
+                android:background="#C3FEBF00" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:padding="3dp"
+                    android:text="추가🥓"
+                    android:textSize="30dp" />
+
+                <TextView
+                    android:id="@+id/typeofadd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:gravity="center"
+                    android:text="없음"
+                    android:textSize="25dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_gravity="center_horizontal"
                 android:background="#C3FEBF00" />
 
             <Button
