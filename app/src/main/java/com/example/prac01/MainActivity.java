@@ -141,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(MainActivity.this, SignUpActivity.class);
+            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }

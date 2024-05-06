@@ -21,14 +21,38 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/white"
-                android:orientation="vertical">
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/mypage"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right"
+                    android:layout_weight="1"
+                    android:background="#00FFFFFF"
+                    android:gravity="start"
+                    android:paddingLeft="12dp"
+                    android:paddingTop="10dp"
+                    android:paddingRight="12dp"
+                    android:paddingBottom="0.1px"
+                    android:text="👤"
+                    android:textColor="#000000"
+                    android:textSize="16sp"
+                    app:iconSize="30dp"
+                    app:rippleColor="#000000" />
 
                 <ImageView
                     android:id="@+id/imageView"
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="80dp"
+                    android:layout_weight="10"
                     app:srcCompat="@drawable/submate" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
             </LinearLayout>
 
             <View
@@ -41,104 +65,54 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:id="@+id/mypage"
-                    android:layout_width="54dp"
-                    android:layout_height="37dp"
-                    android:layout_gravity="right"
-                    android:layout_weight="1"
-                    android:background="#00FFFFFF"
-                    android:paddingLeft="12dp"
-                    android:paddingTop="0.1px"
-                    android:paddingRight="12dp"
-                    android:paddingBottom="0.1px"
-                    android:text="👤"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:iconSize="30dp"
-                    app:rippleColor="#000000" />
-
-                <EditText
-                    android:id="@+id/passwordEditText"
-                    android:layout_width="233dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="10"
-                    android:ems="10"
-                    android:hint="검색어를 입력하세요"
-                    android:inputType="textPassword"
-                    android:textSize="16sp" />
-
-                <!--<com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="220dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:background="#FAF6ED" />-->
-
-                <Button
-                    android:id="@+id/search"
-                    android:layout_width="52dp"
-                    android:layout_height="37dp"
-                    android:layout_gravity="right"
-                    android:layout_weight="1"
-                    android:background="#00FFFFFF"
-                    android:paddingLeft="5dp"
-                    android:paddingTop="0.1px"
-                    android:paddingRight="12dp"
-                    android:paddingBottom="0.1px"
-                    android:text="🔍"
-                    android:textColor="#000000"
-                    android:textSize="16sp"
-                    app:rippleColor="#000000" />
-
-            </LinearLayout>
-
-            <View
-                android:id="@+id/view3"
-                android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="1"
-                android:background="#C3FEBF00" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
                 <Button
                     android:id="@+id/generalbutton"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#FEBF00"
-                    android:text="일반" />
+                    android:text="일반"
+                    android:textSize="12dp"
+                    android:minWidth="0dp"/>
 
                 <Button
                     android:id="@+id/dietbutton"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     android:backgroundTint="#548135"
-                    android:text="다이어트" />
+                    android:text="다이어트"
+                    android:textSize="8dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMaxTextSize="12dp"
+                    android:autoSizeMinTextSize="8dp"
+                    android:autoSizeStepGranularity="1sp"
+                    android:minWidth="0dp"
+                    />
 
                 <Button
                     android:id="@+id/premiumbutton"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#FDBE00"
-                    android:text="고급" />
+                    android:text="고급"
+                    android:textSize="12dp"
+                    android:minWidth="0dp"/>
 
                 <Button
                     android:id="@+id/etcbutton"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:backgroundTint="#548135"
-                    android:text="기타" />
+                    android:text="기타"
+                    android:textSize="12dp"
+                    android:minWidth="0dp"/>
             </LinearLayout>
 
             <LinearLayout
@@ -154,7 +128,7 @@
                 android:paddingBottom="40px">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="174dp"
+                    android:layout_width="150dp"
                     android:layout_height="112dp"
                     android:layout_gravity="center"
                     android:clipToPadding="false"
@@ -214,7 +188,7 @@
                 android:paddingBottom="40px">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="174dp"
+                    android:layout_width="150dp"
                     android:layout_height="112dp"
                     android:layout_gravity="center"
                     android:clipToPadding="false"
@@ -274,7 +248,7 @@
                 android:paddingBottom="40px">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="174dp"
+                    android:layout_width="150dp"
                     android:layout_height="112dp"
                     android:layout_gravity="center"
                     android:clipToPadding="false"
@@ -334,7 +308,7 @@
                 android:paddingBottom="40px">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="174dp"
+                    android:layout_width="150dp"
                     android:layout_height="112dp"
                     android:layout_gravity="center"
                     android:clipToPadding="false"
@@ -394,7 +368,7 @@
                 android:paddingBottom="40px">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="174dp"
+                    android:layout_width="150dp"
                     android:layout_height="112dp"
                     android:layout_gravity="center"
                     android:clipToPadding="false"

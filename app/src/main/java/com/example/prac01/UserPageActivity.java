@@ -51,7 +51,7 @@ public class UserPageActivity extends AppCompatActivity {
                     User user = documentSnapshot.toObject(User.class);
                     String email = user.getEmail();
                     StringTokenizer st = new StringTokenizer(email, "@");
-                    nickname.setText(st.nextToken());
+                    nickname.setText(st.nextToken()+" 님");
                 }
             }
         });

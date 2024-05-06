@@ -143,7 +143,7 @@ public class EtcActivity extends AppCompatActivity {
 
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(EtcActivity.this, SignUpActivity.class);
+            Intent intent = new Intent(EtcActivity.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }

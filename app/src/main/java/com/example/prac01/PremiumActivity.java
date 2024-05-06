@@ -135,7 +135,7 @@ public class PremiumActivity extends AppCompatActivity {
 
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(PremiumActivity.this, SignUpActivity.class);
+            Intent intent = new Intent(PremiumActivity.this, LoginActivity.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
