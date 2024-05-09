@@ -77,21 +77,19 @@ public class LoginActivity extends AppCompatActivity{
                         //loaderLayout.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
                             mAuth.getCurrentUser();
-                            startToast("로그인에 성공하였습니다.");
+                            Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
                             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         } else {
-                            startToast("아이디 또는 비밀번호가 일치하지 않습니다.");
+                            Toast.makeText(this, "아이디 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                         }
                     });
         } else {
-            startToast("이메일 또는 비밀번호를 입력해 주세요.");
+            Toast.makeText(this, "아이디 또는 비밀번호를 입력해 주세요.", Toast.LENGTH_SHORT).show();
         }
 
     }
 
-    private void startToast(String msg) {
-        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
-    }
+
 }
