@@ -45,9 +45,9 @@
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="320dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="7">
+                android:layout_weight="1">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -59,11 +59,17 @@
 
             <Button
                 android:id="@+id/button2"
-                android:layout_width="87dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
+                android:autoSizeMaxTextSize="16dp"
+                android:autoSizeMinTextSize="8dp"
+                android:autoSizeStepGranularity="1sp"
+                android:autoSizeTextType="uniform"
                 android:backgroundTint="#FFC107"
                 android:gravity="center"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
                 android:text="등록"
                 android:textColorLink="#000000"
                 android:textSize="16sp" />

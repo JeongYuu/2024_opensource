@@ -39,8 +39,8 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="10dp"
                 android:gravity="center"
-                android:text="화이트 마카다미아 쿠키"
-                android:textSize="34sp" />
+                android:text="화이트 초코 마카다미아 쿠키"
+                android:textSize="30sp" />
 
             <View
                 android:id="@+id/view3"
@@ -63,7 +63,7 @@
                     android:layout_marginRight="20dp"
                     android:layout_marginBottom="35dp"
                     android:gravity="center"
-                    android:text="존맛탱 과자임"
+                    android:text="고소함 가득한 마카다미아와 달콤한 화이트 초콜릿의 환상적인 궁합"
                     android:textSize="20sp" />
             </LinearLayout>
 

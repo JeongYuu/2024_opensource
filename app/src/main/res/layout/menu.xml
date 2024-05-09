@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:gravity="center"
-                    android:text="파마산오레가노파마산오레가노파마산오레가노파마산오레가노"
+                    android:text="허니오트"
                     android:textSize="25dp" />
             </LinearLayout>
 
@@ -101,7 +101,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:gravity="center"
-                    android:text="슈레드 치즈 또는 슈레드 치즈"
+                    android:text="슈레드 치즈"
                     android:textSize="25dp" />
             </LinearLayout>
 
@@ -132,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
                     android:gravity="center"
-                    android:text="스위트 어니언과 칠리 소스 또는 올리브 오일과 후추 또는 스윗트 칠리 소스"
+                    android:text="핫칠리, 스위트 어니언, 랜치"
                     android:textSize="25dp" />
             </LinearLayout>
 
