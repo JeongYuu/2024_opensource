@@ -41,7 +41,8 @@ public class UserPageActivity extends AppCompatActivity {
             }
         });
 
-       // nickname.setText(mAuth.getCurrentUser().getUid().substring(0,10));
+
+        // nickname.setText(mAuth.getCurrentUser().getUid().substring(0,10));
         db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("userInfo").document("Info");
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
