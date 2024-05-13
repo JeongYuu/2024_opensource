@@ -33,17 +33,12 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
 
         holder.user_id.setText(review.getUser_id().substring(0,10)+" 님");
         holder.content.setText(review.getContent());
-
-
     }
 
     @Override
     public int getItemCount() {
         return reviewList.size();
     }
-
-
-    // Other methods and ViewHolder implementation
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // ViewHolder implementation

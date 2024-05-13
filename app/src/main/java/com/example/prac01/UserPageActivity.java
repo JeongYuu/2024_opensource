@@ -6,14 +6,22 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class UserPageActivity extends AppCompatActivity {
@@ -22,6 +30,9 @@ public class UserPageActivity extends AppCompatActivity {
     private TextView nickname;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
+    private MyReviewAdapter myReviewAdapter;
+    private RecyclerView myrecyclerview;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { //화면 연결
@@ -30,7 +41,7 @@ public class UserPageActivity extends AppCompatActivity {
         logout = findViewById(R.id.logout); //버튼 연결
         nickname = findViewById(R.id.nickname);
         mAuth = FirebaseAuth.getInstance();
-
+        myrecyclerview = findViewById(R.id.myrecyclerview);
         logout.setOnClickListener(new View.OnClickListener() { //버튼 누르면 로그아웃
             @Override
             public void onClick(View v) {
@@ -56,6 +67,28 @@ public class UserPageActivity extends AppCompatActivity {
                 }
             }
         });
+
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+        db.collection("user")
+                .document(mAuth.getCurrentUser().getUid())
+                .collection("review")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
+                        ArrayList<Review> reviewList = new ArrayList<>();
+
+                        for(QueryDocumentSnapshot documentSnapshot : value) {
+                            Review review = documentSnapshot.toObject(Review.class);
+                            reviewList.add(review);
+                        }
+
+                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(UserPageActivity.this);
+                        myrecyclerview.setLayoutManager(layoutManager);
+                        myReviewAdapter = new MyReviewAdapter(reviewList, UserPageActivity.this);
+                        myrecyclerview.setAdapter(myReviewAdapter);
+                    }
+                });
 
     }
 }

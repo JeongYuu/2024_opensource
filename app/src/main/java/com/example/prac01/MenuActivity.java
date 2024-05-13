@@ -46,6 +46,8 @@ public class MenuActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        String menu_name = "";
+
         try {
             if (intent != null) {
                 Bundle bundle = intent.getExtras();
@@ -71,52 +73,70 @@ public class MenuActivity extends AppCompatActivity {
 
                     if (value1.equals("general_menu") && value2.equals("menu1")) {
                         menu_picture.setBackgroundResource(R.drawable.i_bmt);
+                        menu_name = "이탈리안 BMT";
                     }
                     else if (value1.equals("general_menu") && value2.equals("menu2")) {
                         menu_picture.setBackgroundResource(R.drawable.eggmayo);
+                        menu_name = "에그마요";
                     }
                     else if (value1.equals("general_menu") && value2.equals("menu3")) {
                         menu_picture.setBackgroundResource(R.drawable.club);
+                        menu_name = "서브웨이 클럽";
                     }
                     else if (value1.equals("general_menu") && value2.equals("menu4")) {
                         menu_picture.setBackgroundResource(R.drawable.stakeandcheese);
+                        menu_name = "스테이크 앤 치즈";
                     }
                     else if (value1.equals("general_menu") && value2.equals("menu5")) {
                         menu_picture.setBackgroundResource(R.drawable.avocado);
+                        menu_name = "치킨 베이컨 아보카도";
                     }
                     else if (value1.equals("general_menu") && value2.equals("menu6")) {
                         menu_picture.setBackgroundResource(R.drawable.k_bbq);
+                        menu_name = "k-바베큐";
                     }
                     else if (value1.equals("diet_menu") && value2.equals("menu1")) {
                         menu_picture.setBackgroundResource(R.drawable.vege);
+                        menu_name = "베지";
                     }
                     else if (value1.equals("diet_menu") && value2.equals("menu2")) {
                         menu_picture.setBackgroundResource(R.drawable.shrimp);
+                        menu_name = "쉬림프";
                     }
                     else if (value1.equals("diet_menu") && value2.equals("menu3")) {
                         menu_picture.setBackgroundResource(R.drawable.r_chicken);
+                        menu_name = "로스트 치킨";
                     }
                     else if (value1.equals("diet_menu") && value2.equals("menu4")) {
                         menu_picture.setBackgroundResource(R.drawable.r_bbq);
+                        menu_name = "로티세리 바베큐";
                     }
                     else if (value1.equals("diet_menu") && value2.equals("menu5")) {
                         menu_picture.setBackgroundResource(R.drawable.chicken_slice);
+                        menu_name = "치킨 슬라이스";
                     }
                     else if (value1.equals("premium_menu") && value2.equals("menu1")) {
                         menu_picture.setBackgroundResource(R.drawable.eggmayo);
+                        menu_name = "에그마요";
                     }
                     else if (value1.equals("premium_menu") && value2.equals("menu2")) {
                         menu_picture.setBackgroundResource(R.drawable.club);
+                        menu_name = "서브웨이 클럽";
                     }
                     else if (value1.equals("premium_menu") && value2.equals("menu3")) {
                         menu_picture.setBackgroundResource(R.drawable.stakeandcheese);
+                        menu_name = "스테이크 앤 치즈";
                     }
                     else if (value1.equals("premium_menu") && value2.equals("menu4")) {
                         menu_picture.setBackgroundResource(R.drawable.blt);
+                        menu_name = "BLT";
                     }
                     else if (value1.equals("premium_menu") && value2.equals("menu5")) {
                         menu_picture.setBackgroundResource(R.drawable.shrimp);
+                        menu_name = "쉬림프";
                     }
+
+
                 }
             }
         }catch(Exception e){
@@ -125,12 +145,21 @@ public class MenuActivity extends AppCompatActivity {
         }
 
         try {
+            String finalMenu_name = menu_name;
             review_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(MenuActivity.this, ReviewActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+                        Intent intent = new Intent(MenuActivity.this, LoginActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                        Toast.makeText(MenuActivity.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent intent = new Intent(MenuActivity.this, ReviewActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.putExtra("menu_name", finalMenu_name.toString());
+                        startActivity(intent);
+                    }
                 }
             });
         } catch(Exception e){

@@ -39,6 +39,8 @@ public class MenuEtcActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
 
+        String menu_name = "";
+
         try {
             if (intent != null) {
                 Bundle bundle = intent.getExtras();
@@ -60,21 +62,27 @@ public class MenuEtcActivity extends AppCompatActivity {
 
                     if (value1.equals("etc_menu") && value2.equals("menu1")) {
                         menuetc_picture.setBackgroundResource(R.drawable.c1);
+                        menu_name = "초코칩";
                     }
                     else if (value1.equals("etc_menu") && value2.equals("menu2")) {
                         menuetc_picture.setBackgroundResource(R.drawable.c2);
+                        menu_name = "더블 초코칩";
                     }
                     else if (value1.equals("etc_menu") && value2.equals("menu3")) {
                         menuetc_picture.setBackgroundResource(R.drawable.c3);
+                        menu_name = "오트밀 레이즌";
                     }
                     else if (value1.equals("etc_menu") && value2.equals("menu4")) {
                         menuetc_picture.setBackgroundResource(R.drawable.c4);
+                        menu_name = "라즈베리 치즈케익";
                     }
                     else if (value1.equals("etc_menu") && value2.equals("menu5")) {
                         menuetc_picture.setBackgroundResource(R.drawable.c5);
+                        menu_name = "화이트 초코 마카다미아";
                     }
                     else if (value1.equals("etc_menu") && value2.equals("menu6")) {
                         menuetc_picture.setBackgroundResource(R.drawable.hash);
+                        menu_name = "해쉬브라운";
                     }
                 }
             }
@@ -84,12 +92,21 @@ public class MenuEtcActivity extends AppCompatActivity {
         }
 
         try {
+            String finalMenu_name = menu_name;
             review_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(MenuEtcActivity.this, ReviewActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    if (FirebaseAuth.getInstance().getCurrentUser() == null) {
+                        Intent intent = new Intent(MenuEtcActivity.this, LoginActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                        Toast.makeText(MenuEtcActivity.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Intent intent = new Intent(MenuEtcActivity.this, ReviewActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        intent.putExtra("menu_name", finalMenu_name.toString());
+                        startActivity(intent);
+                    }
                 }
             });
         }catch(Exception e){

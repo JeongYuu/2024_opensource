@@ -23,7 +23,6 @@ public class MyReviewAdapter extends RecyclerView.Adapter<MyReviewAdapter.ViewHo
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        // Inflate your layout for each item and create a ViewHolder
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_review, parent, false);
         return new ViewHolder(view);
     }
@@ -34,16 +33,12 @@ public class MyReviewAdapter extends RecyclerView.Adapter<MyReviewAdapter.ViewHo
 
         holder.menu_name.setText(review.getMenu_name());
         holder.my_content.setText(review.getContent());
-
-
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return reviewList.size();
     }
-
-    // Other methods and ViewHolder implementation
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         // ViewHolder implementation
