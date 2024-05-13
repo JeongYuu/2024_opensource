@@ -4,6 +4,9 @@ public class Review {
     String user_id;
     String menu_name;
     String content;
+    public Review() {
+
+    }
 
     public Review(String user_id, String menu_name, String content) {
         this.user_id = user_id;
