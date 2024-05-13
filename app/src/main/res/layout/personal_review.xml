@@ -22,8 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:text="as13ex5"
-            android:textSize="20sp" />
+
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/content"
@@ -31,8 +31,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="70dp"
             android:layout_marginRight="50dp"
-            android:text="맛있어요!"
-            android:textSize="30sp" />
+
+            android:textSize="25sp" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

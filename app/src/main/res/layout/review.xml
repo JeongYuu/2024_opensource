@@ -22,11 +22,14 @@
             <TextView
                 android:id="@+id/review_menu_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:gravity="center"
-                android:text="이탈리안 BMT"
-                android:textSize="48sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:autoSizeTextType="uniform"
+                android:autoSizeMaxTextSize="48dp"
+                android:autoSizeMinTextSize="30dp"
+                android:autoSizeStepGranularity="8sp"
+                />
 
         </LinearLayout>
 
@@ -64,8 +67,8 @@
                 android:layout_height="match_parent"
                 android:layout_weight="3"
                 android:autoSizeMaxTextSize="16dp"
-                android:autoSizeMinTextSize="8dp"
-                android:autoSizeStepGranularity="1sp"
+                android:autoSizeMinTextSize="6dp"
+                android:autoSizeStepGranularity="2sp"
                 android:autoSizeTextType="uniform"
                 android:backgroundTint="#FFC107"
                 android:gravity="center"
@@ -89,12 +92,18 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/textView111"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
+            android:layout_marginTop="5dp"
             android:gravity="center"
             android:text="* 모든 리뷰는 익명성이 보장됩니다." />
+        <TextView
+            android:id="@+id/textView222"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="* 모든 리뷰는 삭제 및 수정이 불가합니다." />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview"
