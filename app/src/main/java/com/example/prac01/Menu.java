@@ -8,6 +8,10 @@ public class Menu {
     String vege;
     String add;
 
+    public Menu() {
+
+    }
+
     public Menu(String name, String bread, String cheese, String sauce, String vege, String add) {
         this.name = name;
         this.bread = bread;

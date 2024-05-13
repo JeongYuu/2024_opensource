@@ -4,6 +4,9 @@ public class MenuEtc {
     String name;
     String description;
 
+    public MenuEtc(){
+
+    }
     public MenuEtc(String name, String description) {
         this.name = name;
         this.description = description;

@@ -62,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }catch(Exception e){
-            Toast.makeText(this, "리뷰 정보를 가져오는데에 실패했습니다.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "리뷰 정보를 불러오는데에 실패했습니다.", Toast.LENGTH_SHORT).show();
         }
 
         try {
@@ -111,6 +111,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("value1", "general_menu");
+                    bundle.putString("value2", "menu1");
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });
@@ -119,6 +123,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("value1", "general_menu");
+                    bundle.putString("value2", "menu2");
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });
@@ -127,6 +135,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("value1", "general_menu");
+                    bundle.putString("value2", "menu3");
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });
@@ -135,6 +147,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("value1", "general_menu");
+                    bundle.putString("value2", "menu4");
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });
@@ -143,6 +159,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("value1", "general_menu");
+                    bundle.putString("value2", "menu5");
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });
@@ -151,6 +171,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    Bundle bundle = new Bundle();
+                    bundle.putString("value1", "general_menu");
+                    bundle.putString("value2", "menu6");
+                    intent.putExtras(bundle);
                     startActivity(intent);
                 }
             });
