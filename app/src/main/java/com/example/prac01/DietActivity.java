@@ -30,7 +30,7 @@ public class DietActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.diet);
 
-        myPage = findViewById(R.id.mypage); //화면이랑 id랑 연결해주는거
+        myPage = findViewById(R.id.mypage);
 
         generalbutton = findViewById(R.id.generalbutton);
         dietbutton = findViewById(R.id.dietbutton);

@@ -41,7 +41,6 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // ViewHolder implementation
         TextView user_id;
         TextView content;
         public ViewHolder(@NonNull View itemView){

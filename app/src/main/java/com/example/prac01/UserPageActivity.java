@@ -35,17 +35,17 @@ public class UserPageActivity extends AppCompatActivity {
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { //화면 연결
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user);
-        logout = findViewById(R.id.logout); //버튼 연결
+        logout = findViewById(R.id.logout);
         nickname = findViewById(R.id.nickname);
         mAuth = FirebaseAuth.getInstance();
         myrecyclerview = findViewById(R.id.myrecyclerview);
-        logout.setOnClickListener(new View.OnClickListener() { //버튼 누르면 로그아웃
+        logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut(); //로그아웃
+                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(UserPageActivity.this, LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
@@ -53,7 +53,7 @@ public class UserPageActivity extends AppCompatActivity {
         });
 
 
-        // nickname.setText(mAuth.getCurrentUser().getUid().substring(0,10));
+
         db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("userInfo").document("Info");
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {

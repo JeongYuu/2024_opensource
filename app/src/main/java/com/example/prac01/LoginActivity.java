@@ -14,30 +14,10 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class LoginActivity extends AppCompatActivity{
-    //private static final int RC_SIGN_IN = 10;
-
-    // FirebaseAuth의 인스턴스를 선언
     private FirebaseAuth mAuth;
 
     private Button signupbutton;
-    /*    private GoogleSignInClient mGoogleSignInClient;
 
-        private final ActivityResultLauncher<Intent> googleSignInLauncher = registerForActivityResult(
-                new ActivityResultContracts.StartActivityForResult(), result -> {
-                    if (result.getResultCode() == RESULT_OK) {
-                        Intent data = result.getData();
-                        if (data != null) {
-                            GoogleSignInResult signInResult = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-                            if (signInResult != null && signInResult.isSuccess()) {
-                                GoogleSignInAccount account = signInResult.getSignInAccount();
-                                if (account != null) {
-                                    firebaseAuthWithGoogle(account);
-                                }
-                            }
-                        }
-                    }
-                });
-    */
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,11 +50,8 @@ public class LoginActivity extends AppCompatActivity{
         String password = ((EditText)findViewById(R.id.passwordEditText)).getText().toString();
 
         if(email.length() > 0 && password.length() > 0 ) {
-            //final RelativeLayout loaderLayout = findViewById(R.id.loaderLayout);
-            //loaderLayout.setVisibility(View.VISIBLE);
             mAuth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, task -> {
-                        //loaderLayout.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
                             mAuth.getCurrentUser();
                             Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();

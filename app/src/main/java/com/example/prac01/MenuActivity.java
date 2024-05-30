@@ -29,7 +29,7 @@ public class MenuActivity extends AppCompatActivity {
     private CardView menu_picture;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) { //화면 연결
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 

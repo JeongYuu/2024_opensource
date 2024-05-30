@@ -41,7 +41,6 @@ public class MyReviewAdapter extends RecyclerView.Adapter<MyReviewAdapter.ViewHo
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        // ViewHolder implementation
         TextView menu_name;
         TextView my_content;
         public ViewHolder(@NonNull View itemView){
