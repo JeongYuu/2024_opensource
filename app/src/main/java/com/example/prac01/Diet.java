@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class DietActivity extends AppCompatActivity {
+public class Diet extends AppCompatActivity {
     private Button myPage;
     private Button generalbutton;
     private Button dietbutton;
@@ -48,13 +48,13 @@ public class DietActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-                        Intent intent = new Intent(DietActivity.this, SignUpActivity.class);
+                        Intent intent = new Intent(Diet.this, SignUp.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
-                        Toast.makeText(DietActivity.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Diet.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
 
                     } else {
-                        Intent intent = new Intent(DietActivity.this, UserPageActivity.class);
+                        Intent intent = new Intent(Diet.this, User.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     }
@@ -68,7 +68,7 @@ public class DietActivity extends AppCompatActivity {
             generalbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(DietActivity.this, MainActivity.class);
+                    Intent intent = new Intent(Diet.this, Main.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -76,7 +76,7 @@ public class DietActivity extends AppCompatActivity {
             dietbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(DietActivity.this, DietActivity.class);
+                    Intent intent = new Intent(Diet.this, Diet.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -84,7 +84,7 @@ public class DietActivity extends AppCompatActivity {
             premiumbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(DietActivity.this, PremiumActivity.class);
+                    Intent intent = new Intent(Diet.this, Premium.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -92,7 +92,7 @@ public class DietActivity extends AppCompatActivity {
             etcbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(DietActivity.this, EtcActivity.class);
+                    Intent intent = new Intent(Diet.this, Etc.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -105,7 +105,7 @@ public class DietActivity extends AppCompatActivity {
         diet_menu1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DietActivity.this, MenuActivity.class);
+                Intent intent = new Intent(Diet.this, Menu.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 Bundle bundle = new Bundle();
                 bundle.putString("value1", "diet_menu");
@@ -117,7 +117,7 @@ public class DietActivity extends AppCompatActivity {
         diet_menu2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DietActivity.this, MenuActivity.class);
+                Intent intent = new Intent(Diet.this, Menu.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 Bundle bundle = new Bundle();
                 bundle.putString("value1", "diet_menu");
@@ -129,7 +129,7 @@ public class DietActivity extends AppCompatActivity {
         diet_menu3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DietActivity.this, MenuActivity.class);
+                Intent intent = new Intent(Diet.this, Menu.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 Bundle bundle = new Bundle();
                 bundle.putString("value1", "diet_menu");
@@ -141,7 +141,7 @@ public class DietActivity extends AppCompatActivity {
         diet_menu4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DietActivity.this, MenuActivity.class);
+                Intent intent = new Intent(Diet.this, Menu.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 Bundle bundle = new Bundle();
                 bundle.putString("value1", "diet_menu");
@@ -153,7 +153,7 @@ public class DietActivity extends AppCompatActivity {
         diet_menu5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(DietActivity.this, MenuActivity.class);
+                Intent intent = new Intent(Diet.this, Menu.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 Bundle bundle = new Bundle();
                 bundle.putString("value1", "diet_menu");
@@ -169,7 +169,7 @@ public class DietActivity extends AppCompatActivity {
 
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(DietActivity.this, LoginActivity.class);
+            Intent intent = new Intent(Diet.this, Login.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }

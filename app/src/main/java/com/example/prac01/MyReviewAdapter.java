@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class MyReviewAdapter extends RecyclerView.Adapter<MyReviewAdapter.ViewHolder> {
 
-    private ArrayList<Review> reviewList;
+    private ArrayList<ReviewInfo> reviewInfoList;
     private final Context context;
 
-    public MyReviewAdapter(ArrayList<Review> reviewList, Context context){
-        this.reviewList = reviewList;
+    public MyReviewAdapter(ArrayList<ReviewInfo> reviewInfoList, Context context){
+        this.reviewInfoList = reviewInfoList;
         this.context = context;
     }
 
@@ -29,15 +29,15 @@ public class MyReviewAdapter extends RecyclerView.Adapter<MyReviewAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Review review = reviewList.get(position);
+        ReviewInfo reviewInfo = reviewInfoList.get(position);
 
-        holder.menu_name.setText(review.getMenu_name());
-        holder.my_content.setText(review.getContent());
+        holder.menu_name.setText(reviewInfo.getMenu_name());
+        holder.my_content.setText(reviewInfo.getContent());
     }
 
     @Override
     public int getItemCount() {
-        return reviewList.size();
+        return reviewInfoList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

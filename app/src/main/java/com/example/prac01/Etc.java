@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class EtcActivity extends AppCompatActivity {
+public class Etc extends AppCompatActivity {
     private Button myPage;
     private Button generalbutton;
     private Button dietbutton;
@@ -49,13 +49,13 @@ public class EtcActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-                        Intent intent = new Intent(EtcActivity.this, SignUpActivity.class);
+                        Intent intent = new Intent(Etc.this, SignUp.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
-                        Toast.makeText(EtcActivity.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Etc.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
 
                     } else {
-                        Intent intent = new Intent(EtcActivity.this, UserPageActivity.class);
+                        Intent intent = new Intent(Etc.this, User.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                     }
@@ -69,7 +69,7 @@ public class EtcActivity extends AppCompatActivity {
             generalbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, MainActivity.class);
+                    Intent intent = new Intent(Etc.this, Main.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -77,7 +77,7 @@ public class EtcActivity extends AppCompatActivity {
             dietbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, DietActivity.class);
+                    Intent intent = new Intent(Etc.this, Diet.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -85,7 +85,7 @@ public class EtcActivity extends AppCompatActivity {
             premiumbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, PremiumActivity.class);
+                    Intent intent = new Intent(Etc.this, Premium.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -93,7 +93,7 @@ public class EtcActivity extends AppCompatActivity {
             etcbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, EtcActivity.class);
+                    Intent intent = new Intent(Etc.this, Etc.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 }
@@ -106,7 +106,7 @@ public class EtcActivity extends AppCompatActivity {
             etc_menu1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
+                    Intent intent = new Intent(Etc.this, MenuEtc.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     Bundle bundle = new Bundle();
                     bundle.putString("value1", "etc_menu");
@@ -118,7 +118,7 @@ public class EtcActivity extends AppCompatActivity {
             etc_menu2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
+                    Intent intent = new Intent(Etc.this, MenuEtc.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     Bundle bundle = new Bundle();
                     bundle.putString("value1", "etc_menu");
@@ -130,7 +130,7 @@ public class EtcActivity extends AppCompatActivity {
             etc_menu3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
+                    Intent intent = new Intent(Etc.this, MenuEtc.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     Bundle bundle = new Bundle();
                     bundle.putString("value1", "etc_menu");
@@ -142,7 +142,7 @@ public class EtcActivity extends AppCompatActivity {
             etc_menu4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
+                    Intent intent = new Intent(Etc.this, MenuEtc.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     Bundle bundle = new Bundle();
                     bundle.putString("value1", "etc_menu");
@@ -154,7 +154,7 @@ public class EtcActivity extends AppCompatActivity {
             etc_menu5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
+                    Intent intent = new Intent(Etc.this, MenuEtc.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     Bundle bundle = new Bundle();
                     bundle.putString("value1", "etc_menu");
@@ -166,7 +166,7 @@ public class EtcActivity extends AppCompatActivity {
             etc_menu6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(EtcActivity.this, MenuEtcActivity.class);
+                    Intent intent = new Intent(Etc.this, MenuEtc.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     Bundle bundle = new Bundle();
                     bundle.putString("value1", "etc_menu");
@@ -182,11 +182,12 @@ public class EtcActivity extends AppCompatActivity {
 
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(EtcActivity.this, LoginActivity.class);
+            Intent intent = new Intent(Etc.this, Login.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
 
     }
+
 
 }

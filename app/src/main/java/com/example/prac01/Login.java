@@ -13,7 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 
-public class LoginActivity extends AppCompatActivity{
+public class Login extends AppCompatActivity{
     private FirebaseAuth mAuth;
 
     private Button signupbutton;
@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity{
         signupbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
+                Intent intent = new Intent(Login.this, SignUp.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -55,7 +55,7 @@ public class LoginActivity extends AppCompatActivity{
                         if (task.isSuccessful()) {
                             mAuth.getCurrentUser();
                             Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                            Intent intent = new Intent(Login.this, Main.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         } else {
@@ -67,6 +67,5 @@ public class LoginActivity extends AppCompatActivity{
         }
 
     }
-
 
 }

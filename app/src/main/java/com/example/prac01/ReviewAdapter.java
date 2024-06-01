@@ -13,11 +13,11 @@ import java.util.ArrayList;
 
 public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder> {
 
-    private ArrayList<Review> reviewList;
+    private ArrayList<ReviewInfo> reviewInfoList;
     private final Context context;
 
-    public ReviewAdapter(ArrayList<Review> reviewList, Context context){
-        this.reviewList = reviewList;
+    public ReviewAdapter(ArrayList<ReviewInfo> reviewInfoList, Context context){
+        this.reviewInfoList = reviewInfoList;
         this.context = context;
     }
 
@@ -29,15 +29,15 @@ public class ReviewAdapter extends RecyclerView.Adapter<ReviewAdapter.ViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Review review = reviewList.get(position);
+        ReviewInfo reviewInfo = reviewInfoList.get(position);
 
-        holder.user_id.setText(review.getUser_id().substring(0,10)+" 님");
-        holder.content.setText(review.getContent());
+        holder.user_id.setText(reviewInfo.getUser_id().substring(0,10)+" 님");
+        holder.content.setText(reviewInfo.getContent());
     }
 
     @Override
     public int getItemCount() {
-        return reviewList.size();
+        return reviewInfoList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {

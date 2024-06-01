@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Prac01"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Main"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,39 +21,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity"
+        <activity android:name=".SignUp"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".LoginActivity"
+        <activity android:name=".Login"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".UserPageActivity"
+        <activity android:name=".User"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".MenuActivity"
+        <activity android:name=".Menu"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".MenuEtcActivity"
+        <activity android:name=".MenuEtc"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".ReviewActivity"
+        <activity android:name=".Review"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".DietActivity"
+        <activity android:name=".Diet"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".PremiumActivity"
+        <activity android:name=".Premium"
             android:screenOrientation="portrait">
 
         </activity>
-        <activity android:name=".EtcActivity"
+        <activity android:name=".Etc"
             android:screenOrientation="portrait">
 
         </activity>
