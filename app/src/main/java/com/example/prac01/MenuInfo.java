@@ -1,17 +1,16 @@
 package com.example.prac01;
 
 public class MenuInfo {
-    String name;
-    String bread;
-    String cheese;
-    String sauce;
-    String vege;
-    String add;
+    private String name;
+    private String bread;
+    private String cheese;
+    private String sauce;
+    private String vege;
+    private String add;
 
     public MenuInfo() {
 
     }
-
     public MenuInfo(String name, String bread, String cheese, String sauce, String vege, String add) {
         this.name = name;
         this.bread = bread;
@@ -25,47 +24,23 @@ public class MenuInfo {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getBread() {
         return bread;
-    }
-
-    public void setBread(String bread) {
-        this.bread = bread;
     }
 
     public String getCheese() {
         return cheese;
     }
 
-    public void setCheese(String cheese) {
-        this.cheese = cheese;
-    }
-
     public String getSauce() {
         return sauce;
-    }
-
-    public void setSauce(String sauce) {
-        this.sauce = sauce;
     }
 
     public String getVege() {
         return vege;
     }
 
-    public void setVege(String vege) {
-        this.vege = vege;
-    }
-
     public String getAdd() {
         return add;
-    }
-
-    public void setAdd(String add) {
-        this.add = add;
     }
 }

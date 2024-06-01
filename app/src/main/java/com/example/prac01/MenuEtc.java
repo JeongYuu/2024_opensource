@@ -18,11 +18,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class MenuEtc extends AppCompatActivity {
     private Button review_button;
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
-    private CardView menuetc_picture;
     private TextView typeofetcname;
     private TextView description;
+    private CardView menuetc_picture;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,13 +45,13 @@ public class MenuEtc extends AppCompatActivity {
                 if (bundle != null) {
                     String value1 = bundle.getString("value1");
                     String value2 = bundle.getString("value2");
-                    db = FirebaseFirestore.getInstance();
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
                     DocumentReference docRef = db.collection(value1).document(value2);
                     docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             if (documentSnapshot.exists()) {
-                                set_menu(documentSnapshot);
+                                set_MenuEtc(documentSnapshot);
                             }
                         }
                     });
@@ -109,9 +107,6 @@ public class MenuEtc extends AppCompatActivity {
         }
 
     }
-    public void toast(String text){
-        Toast.makeText(MenuEtc.this, text, Toast.LENGTH_SHORT).show();
-    }
 
     public void check_Login_MenuEtc(){
         Intent intent = new Intent(MenuEtc.this, Login.class);
@@ -120,10 +115,14 @@ public class MenuEtc extends AppCompatActivity {
         toast("로그인이 되어 있지 않습니다.");
     }
 
-    public void set_menu(DocumentSnapshot documentSnapshot) {
+    public void set_MenuEtc(DocumentSnapshot documentSnapshot) {
         MenuEtcInfo menuetcInfo = documentSnapshot.toObject(MenuEtcInfo.class);
         typeofetcname.setText(menuetcInfo.getName());
         description.setText(menuetcInfo.getDescription());
+    }
+
+    public void toast(String text){
+        Toast.makeText(MenuEtc.this, text, Toast.LENGTH_SHORT).show();
     }
 
 }

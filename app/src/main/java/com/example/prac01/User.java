@@ -25,11 +25,6 @@ import java.util.ArrayList;
 import java.util.StringTokenizer;
 
 public class User extends AppCompatActivity {
-
-    private Button logout;
-    private TextView nickname;
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
     private MyReviewAdapter myReviewAdapter;
     private RecyclerView myrecyclerview;
 
@@ -38,11 +33,11 @@ public class User extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user);
-        logout = findViewById(R.id.logout);
-        nickname = findViewById(R.id.nickname);
+        Button logout = findViewById(R.id.logout);
+        TextView nickname = findViewById(R.id.nickname);
         myrecyclerview = findViewById(R.id.myrecyclerview);
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

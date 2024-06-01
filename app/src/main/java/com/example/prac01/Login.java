@@ -14,18 +14,14 @@ import com.google.firebase.auth.FirebaseAuth;
 
 
 public class Login extends AppCompatActivity{
-    private FirebaseAuth mAuth;
-
-    private Button signupbutton;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        mAuth = FirebaseAuth.getInstance();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
-        signupbutton = findViewById(R.id.signupbutton);
+        Button signupbutton = findViewById(R.id.signupbutton);
 
         findViewById(R.id.loginButton).setOnClickListener(onClickListener);
 
@@ -46,6 +42,7 @@ public class Login extends AppCompatActivity{
     private void login() {
         String email = ((EditText)findViewById(R.id.emailEditText)).getText().toString();
         String password = ((EditText)findViewById(R.id.passwordEditText)).getText().toString();
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         if(email.length() > 0 && password.length() > 0 ) {
             mAuth.signInWithEmailAndPassword(email, password)

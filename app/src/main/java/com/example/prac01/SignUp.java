@@ -13,16 +13,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 public class SignUp extends AppCompatActivity {
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
-
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
 
-        mAuth = FirebaseAuth.getInstance();
-
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
         findViewById(R.id.signUpButton).setOnClickListener(onClickListener);
         findViewById(R.id.gotoLoginButton).setOnClickListener(onClickListener);
@@ -32,7 +28,6 @@ public class SignUp extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
     }
 
     View.OnClickListener onClickListener = view -> {
@@ -48,6 +43,9 @@ public class SignUp extends AppCompatActivity {
         String password = ((EditText)findViewById(R.id.passwordEditText)).getText().toString();
         String passwordCheck = ((EditText)findViewById(R.id.passwordCheckEditText)).getText().toString();
 
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+
         if(email.length() > 0 && password.length() > 0 && passwordCheck.length() > 0) {
             if(password.equals(passwordCheck)) {
                 mAuth.createUserWithEmailAndPassword(email, password)
@@ -55,7 +53,7 @@ public class SignUp extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 mAuth.getCurrentUser();
                                 UserInfo userInfo = new UserInfo(email, password);
-                                db = FirebaseFirestore.getInstance();
+
                                 db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("userInfo").document("Info").set(userInfo);
                                 toast("회원가입에 성공하였습니다.");
                                 Intent intent = new Intent(SignUp.this, Main.class);

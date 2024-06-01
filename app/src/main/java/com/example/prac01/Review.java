@@ -41,7 +41,6 @@ public class Review extends AppCompatActivity {
         recyclerview = findViewById(R.id.recyclerview);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-
         Intent intent = getIntent();
 
         if (intent != null) {

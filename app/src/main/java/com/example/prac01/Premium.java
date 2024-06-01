@@ -12,36 +12,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Premium extends AppCompatActivity {
-    private Button myPage;
-    private Button generalbutton;
-    private Button dietbutton;
-    private Button premiumbutton;
-    private Button etcbutton;
-
-    private LinearLayout premium_menu1;
-    private LinearLayout premium_menu2;
-    private LinearLayout premium_menu3;
-    private LinearLayout premium_menu4;
-    private LinearLayout premium_menu5;
-    private LinearLayout premium_menu6;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.premium);
 
-        myPage = findViewById(R.id.mypage);
+        Button myPage = findViewById(R.id.mypage);
 
-        generalbutton = findViewById(R.id.generalbutton);
-        dietbutton = findViewById(R.id.dietbutton);
-        premiumbutton = findViewById(R.id.premiumbutton);
-        etcbutton = findViewById(R.id.etcbutton);
+        Button generalbutton = findViewById(R.id.generalbutton);
+        Button dietbutton = findViewById(R.id.dietbutton);
+        Button premiumbutton = findViewById(R.id.premiumbutton);
+        Button etcbutton = findViewById(R.id.etcbutton);
 
-        premium_menu1 = findViewById(R.id.premium_menu1);
-        premium_menu2 = findViewById(R.id.premium_menu2);
-        premium_menu3 = findViewById(R.id.premium_menu3);
-        premium_menu4 = findViewById(R.id.premium_menu4);
-        premium_menu5 = findViewById(R.id.premium_menu5);
+        LinearLayout premium_menu1 = findViewById(R.id.premium_menu1);
+        LinearLayout premium_menu2 = findViewById(R.id.premium_menu2);
+        LinearLayout premium_menu3 = findViewById(R.id.premium_menu3);
+        LinearLayout premium_menu4 = findViewById(R.id.premium_menu4);
+        LinearLayout premium_menu5 = findViewById(R.id.premium_menu5);
 
 
         try {

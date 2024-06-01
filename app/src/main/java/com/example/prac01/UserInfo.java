@@ -1,8 +1,8 @@
 package com.example.prac01;
 
 public class UserInfo {
-    String email;
-    String password;
+    private String email;
+    private String password;
     public UserInfo() {}
 
     public UserInfo(String email, String password) {
@@ -12,18 +12,6 @@ public class UserInfo {
 
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
     }
 
 }

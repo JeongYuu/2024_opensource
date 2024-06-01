@@ -12,37 +12,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Etc extends AppCompatActivity {
-    private Button myPage;
-    private Button generalbutton;
-    private Button dietbutton;
-    private Button premiumbutton;
-    private Button etcbutton;
-
-    private LinearLayout etc_menu1;
-    private LinearLayout etc_menu2;
-    private LinearLayout etc_menu3;
-    private LinearLayout etc_menu4;
-    private LinearLayout etc_menu5;
-    private LinearLayout etc_menu6;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.etc);
 
-        myPage = findViewById(R.id.mypage);
+        Button myPage = findViewById(R.id.mypage);
 
-        generalbutton = findViewById(R.id.generalbutton);
-        dietbutton = findViewById(R.id.dietbutton);
-        premiumbutton = findViewById(R.id.premiumbutton);
-        etcbutton = findViewById(R.id.etcbutton);
+        Button generalbutton = findViewById(R.id.generalbutton);
+        Button dietbutton = findViewById(R.id.dietbutton);
+        Button premiumbutton = findViewById(R.id.premiumbutton);
+        Button etcbutton = findViewById(R.id.etcbutton);
 
-        etc_menu1 = findViewById(R.id.etc_menu1);
-        etc_menu2 = findViewById(R.id.etc_menu2);
-        etc_menu3 = findViewById(R.id.etc_menu3);
-        etc_menu4 = findViewById(R.id.etc_menu4);
-        etc_menu5 = findViewById(R.id.etc_menu5);
-        etc_menu6 = findViewById(R.id.etc_menu6);
+        LinearLayout etc_menu1 = findViewById(R.id.etc_menu1);
+        LinearLayout etc_menu2 = findViewById(R.id.etc_menu2);
+        LinearLayout etc_menu3 = findViewById(R.id.etc_menu3);
+        LinearLayout etc_menu4 = findViewById(R.id.etc_menu4);
+        LinearLayout etc_menu5 = findViewById(R.id.etc_menu5);
+        LinearLayout etc_menu6 = findViewById(R.id.etc_menu6);
 
         try {
             myPage.setOnClickListener(new View.OnClickListener() {

@@ -18,8 +18,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class Menu extends AppCompatActivity {
     private Button review_button;
-    private FirebaseAuth mAuth;
-    private FirebaseFirestore db;
     private TextView typeofname;
     private TextView typeofbread;
     private TextView typeofcheese;
@@ -54,13 +52,14 @@ public class Menu extends AppCompatActivity {
                 if (bundle != null) {
                     String value1 = bundle.getString("value1");
                     String value2 = bundle.getString("value2");
-                    db = FirebaseFirestore.getInstance();
+                    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
                     DocumentReference docRef = db.collection(value1).document(value2);
                     docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             if (documentSnapshot.exists()) {
-                                set_menu(documentSnapshot);
+                                set_Menu(documentSnapshot);
                             }
                         }
                     });
@@ -158,9 +157,6 @@ public class Menu extends AppCompatActivity {
         }
 
     }
-    public void toast(String text){
-        Toast.makeText(Menu.this, text, Toast.LENGTH_SHORT).show();
-    }
 
     public void check_Login_Menu(){
         Intent intent = new Intent(Menu.this, Login.class);
@@ -169,7 +165,7 @@ public class Menu extends AppCompatActivity {
         toast("로그인이 되어 있지 않습니다.");
     }
 
-    public void set_menu(DocumentSnapshot documentSnapshot) {
+    public void set_Menu(DocumentSnapshot documentSnapshot) {
         MenuInfo menuInfo = documentSnapshot.toObject(MenuInfo.class);
         typeofname.setText(menuInfo.getName());
         typeofbread.setText(menuInfo.getBread());
@@ -179,4 +175,7 @@ public class Menu extends AppCompatActivity {
         typeofadd.setText(menuInfo.getAdd());
     }
 
+    public void toast(String text){
+        Toast.makeText(Menu.this, text, Toast.LENGTH_SHORT).show();
+    }
 }
