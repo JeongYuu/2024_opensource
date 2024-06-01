@@ -24,9 +24,7 @@ import java.util.ArrayList;
 public class Review extends AppCompatActivity {
 
     private TextInputEditText review_input;
-    private Button review_register;
     private TextView review_menu_name;
-
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private ReviewAdapter reviewAdapter;
@@ -38,7 +36,7 @@ public class Review extends AppCompatActivity {
         setContentView(R.layout.review);
 
         review_input = findViewById(R.id.review_input);
-        review_register = findViewById(R.id.review_register);
+        Button review_register = findViewById(R.id.review_register);
         review_menu_name = findViewById(R.id.review_menu_name);
         recyclerview = findViewById(R.id.recyclerview);
         mAuth = FirebaseAuth.getInstance();
