@@ -49,145 +49,119 @@ public class Etc extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-                        Intent intent = new Intent(Etc.this, SignUp.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
-                        Toast.makeText(Etc.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
+                        check_Login_Etc();
 
                     } else {
-                        Intent intent = new Intent(Etc.this, User.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
+                        change_Tap_Etc(User.class);
                     }
                 }
             });
         } catch(Exception e){
-            Toast.makeText(this, "리뷰 정보를 불러오는데에 실패했습니다.", Toast.LENGTH_SHORT).show();
+            toast("리뷰 정보를 불러오는데에 실패했습니다.");
         }
 
         try {
             generalbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, Main.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    change_Tap_Etc(Main.class);
                 }
             });
             dietbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, Diet.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    change_Tap_Etc(Diet.class);
                 }
             });
             premiumbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, Premium.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    change_Tap_Etc(Premium.class);
                 }
             });
             etcbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, Etc.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    change_Tap_Etc(Etc.class);
                 }
             });
         }catch(Exception e){
-            Toast.makeText(this, "탭 변경을 실패했습니다.", Toast.LENGTH_SHORT).show();
+            toast("탭 변경을 실패했습니다.");
         }
 
         try {
             etc_menu1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, MenuEtc.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "etc_menu");
-                    bundle.putString("value2", "menu1");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Etc("menu1");
                 }
             });
             etc_menu2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, MenuEtc.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "etc_menu");
-                    bundle.putString("value2", "menu2");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Etc("menu2");
                 }
             });
             etc_menu3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, MenuEtc.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "etc_menu");
-                    bundle.putString("value2", "menu3");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Etc("menu3");
                 }
             });
             etc_menu4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, MenuEtc.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "etc_menu");
-                    bundle.putString("value2", "menu4");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Etc("menu4");
                 }
             });
             etc_menu5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, MenuEtc.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "etc_menu");
-                    bundle.putString("value2", "menu5");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Etc("menu5");
                 }
             });
             etc_menu6.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Etc.this, MenuEtc.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "etc_menu");
-                    bundle.putString("value2", "menu6");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Etc("menu6");
                 }
             });
         }catch(Exception e){
-            Toast.makeText(this, "메뉴 정보를 불러오는데에 실패했습니다.", Toast.LENGTH_SHORT).show();
+            toast("메뉴 정보를 불러오는데에 실패했습니다.");
         }
 
 
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(Etc.this, Login.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            check_Login_Etc();
         }
 
     }
+    public void check_Login_Etc(){
+        Intent intent = new Intent(Etc.this, Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        toast("로그인이 되어 있지 않습니다.");
+    }
 
+    public void change_Tap_Etc(Class<?> targetClass) {
+        Intent intent = new Intent(Etc.this, targetClass);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    public void select_Menu_Etc(String menu_name){
+        Intent intent = new Intent(Etc.this, MenuEtc.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Bundle bundle = new Bundle();
+        bundle.putString("value1", "etc_menu");
+        bundle.putString("value2", menu_name);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public void toast(String text){
+        Toast.makeText(Etc.this, text, Toast.LENGTH_SHORT).show();
+    }
 
 }

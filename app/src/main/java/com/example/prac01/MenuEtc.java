@@ -53,9 +53,7 @@ public class MenuEtc extends AppCompatActivity {
                         @Override
                         public void onSuccess(DocumentSnapshot documentSnapshot) {
                             if (documentSnapshot.exists()) {
-                                MenuEtcInfo menuetcInfo = documentSnapshot.toObject(MenuEtcInfo.class);
-                                typeofetcname.setText(menuetcInfo.getName());
-                                description.setText(menuetcInfo.getDescription());
+                                set_menu(documentSnapshot);
                             }
                         }
                     });
@@ -87,8 +85,7 @@ public class MenuEtc extends AppCompatActivity {
                 }
             }
         }catch(Exception e){
-            Toast.makeText(this, "메뉴 정보를 불러오는데에 실패했습니다.", Toast.LENGTH_SHORT).show();
-
+            toast("메뉴 정보를 불러오는데에 실패했습니다.");
         }
 
         try {
@@ -97,23 +94,36 @@ public class MenuEtc extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-                        Intent intent = new Intent(MenuEtc.this, Login.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
-                        Toast.makeText(MenuEtc.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
+                        check_Login_MenuEtc();
                     } else {
                         Intent intent = new Intent(MenuEtc.this, Review.class);
                         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         intent.putExtra("menu_name", finalMenu_name.toString());
                         startActivity(intent);
+
                     }
                 }
             });
         }catch(Exception e){
-            Toast.makeText(this, "리뷰 정보를 가져오는데에 실패했습니다.", Toast.LENGTH_SHORT).show();
+            toast("리뷰 정보를 가져오는데에 실패했습니다.");
         }
 
     }
+    public void toast(String text){
+        Toast.makeText(MenuEtc.this, text, Toast.LENGTH_SHORT).show();
+    }
 
+    public void check_Login_MenuEtc(){
+        Intent intent = new Intent(MenuEtc.this, Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        toast("로그인이 되어 있지 않습니다.");
+    }
+
+    public void set_menu(DocumentSnapshot documentSnapshot) {
+        MenuEtcInfo menuetcInfo = documentSnapshot.toObject(MenuEtcInfo.class);
+        typeofetcname.setText(menuetcInfo.getName());
+        description.setText(menuetcInfo.getDescription());
+    }
 
 }

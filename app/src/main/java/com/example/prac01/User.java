@@ -40,21 +40,18 @@ public class User extends AppCompatActivity {
         setContentView(R.layout.user);
         logout = findViewById(R.id.logout);
         nickname = findViewById(R.id.nickname);
-        mAuth = FirebaseAuth.getInstance();
         myrecyclerview = findViewById(R.id.myrecyclerview);
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(User.this, Login.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                setLogout();
             }
         });
 
 
-
-        db = FirebaseFirestore.getInstance();
         DocumentReference docRef = db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("userInfo").document("Info");
         docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
@@ -68,27 +65,36 @@ public class User extends AppCompatActivity {
             }
         });
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
         db.collection("user")
                 .document(mAuth.getCurrentUser().getUid())
                 .collection("review")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        ArrayList<ReviewInfo> reviewInfoList = new ArrayList<>();
-
-                        for(QueryDocumentSnapshot documentSnapshot : value) {
-                            ReviewInfo reviewInfo = documentSnapshot.toObject(ReviewInfo.class);
-                            reviewInfoList.add(reviewInfo);
-                        }
-
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(User.this);
-                        myrecyclerview.setLayoutManager(layoutManager);
-                        myReviewAdapter = new MyReviewAdapter(reviewInfoList, User.this);
-                        myrecyclerview.setAdapter(myReviewAdapter);
+                        setMyReview(value);
                     }
                 });
 
+    }
+
+    public void setLogout(){
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(User.this, Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    public void setMyReview(QuerySnapshot value){
+        ArrayList<ReviewInfo> reviewInfoList = new ArrayList<>();
+
+        for(QueryDocumentSnapshot documentSnapshot : value) {
+            ReviewInfo reviewInfo = documentSnapshot.toObject(ReviewInfo.class);
+            reviewInfoList.add(reviewInfo);
+        }
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(User.this);
+        myrecyclerview.setLayoutManager(layoutManager);
+        myReviewAdapter = new MyReviewAdapter(reviewInfoList, User.this);
+        myrecyclerview.setAdapter(myReviewAdapter);
     }
 }

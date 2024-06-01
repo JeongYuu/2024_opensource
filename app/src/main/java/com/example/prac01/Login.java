@@ -32,9 +32,7 @@ public class Login extends AppCompatActivity{
         signupbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Login.this, SignUp.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
+                change_Tap_Login(SignUp.class);
             }
         });
     }
@@ -54,18 +52,28 @@ public class Login extends AppCompatActivity{
                     .addOnCompleteListener(this, task -> {
                         if (task.isSuccessful()) {
                             mAuth.getCurrentUser();
-                            Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                            toast("로그인에 성공하였습니다.");
                             Intent intent = new Intent(Login.this, Main.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                             startActivity(intent);
                         } else {
-                            Toast.makeText(this, "아이디 또는 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                            toast("아이디 또는 비밀번호가 일치하지 않습니다.");
                         }
                     });
         } else {
-            Toast.makeText(this, "아이디 또는 비밀번호를 입력해 주세요.", Toast.LENGTH_SHORT).show();
+            toast("아이디 또는 비밀번호를 입력해 주세요.");
         }
 
+    }
+
+    public void change_Tap_Login(Class<?> targetClass) {
+        Intent intent = new Intent(Login.this, targetClass);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    public void toast(String text){
+        Toast.makeText(Login.this, text, Toast.LENGTH_SHORT).show();
     }
 
 }

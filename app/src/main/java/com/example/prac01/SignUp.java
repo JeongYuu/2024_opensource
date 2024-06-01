@@ -39,9 +39,7 @@ public class SignUp extends AppCompatActivity {
         if (view.getId() == R.id.signUpButton) {
             signUp();
         } else if (view.getId() == R.id.gotoLoginButton) {
-            Intent intent = new Intent(SignUp.this, Login.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            change_Tap_Signup(Login.class);
         }
     };
 
@@ -59,28 +57,37 @@ public class SignUp extends AppCompatActivity {
                                 UserInfo userInfo = new UserInfo(email, password);
                                 db = FirebaseFirestore.getInstance();
                                 db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("userInfo").document("Info").set(userInfo);
-                                Toast.makeText(this, "회원가입에 성공하였습니다.", Toast.LENGTH_SHORT).show();
+                                toast("회원가입에 성공하였습니다.");
                                 Intent intent = new Intent(SignUp.this, Main.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             } else if (task.getException() != null) {
                                 String exceptionMessage = task.getException().toString();
                                 if (exceptionMessage.contains("FirebaseAuthWeakPasswordException")) {
-                                    Toast.makeText(this, "비밀번호는 6자리 이상이어야 합니다.", Toast.LENGTH_SHORT).show();
+                                    toast("비밀번호는 6자리 이상이어야 합니다.");
                                 } else if (exceptionMessage.contains("FirebaseAuthUserCollisionException")) {
-                                    Toast.makeText(this, "이미 가입한 계정이 있습니다.", Toast.LENGTH_SHORT).show();
+                                    toast("이미 가입한 계정이 있습니다.");
                                 } else {
-                                    Toast.makeText(this, "회원가입에 실패하였습니다.", Toast.LENGTH_SHORT).show();
+                                    toast("회원가입에 실패하였습니다.");
                                 }
                             }
                         });
             } else {
-                Toast.makeText(this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
+                toast( "비밀번호가 일치하지 않습니다.");
             }
         } else {
-            Toast.makeText(this, "이메일 또는 비밀번호를 입력해 주세요.", Toast.LENGTH_SHORT).show();
+            toast("이메일 또는 비밀번호를 입력해 주세요.");
         }
 
+    }
+    public void change_Tap_Signup(Class<?> targetClass) {
+        Intent intent = new Intent(SignUp.this, targetClass);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    public void toast(String text){
+        Toast.makeText(SignUp.this, text, Toast.LENGTH_SHORT).show();
     }
 
 }

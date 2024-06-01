@@ -49,132 +49,111 @@ public class Premium extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     if (FirebaseAuth.getInstance().getCurrentUser() == null) {
-                        Intent intent = new Intent(Premium.this, SignUp.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
-                        Toast.makeText(Premium.this, "로그인이 되어 있지 않습니다.", Toast.LENGTH_SHORT).show();
+                        check_Login_Premium();
 
                     } else {
-                        Intent intent = new Intent(Premium.this, User.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
+                        change_Tap_Premium(User.class);
                     }
                 }
             });
         } catch(Exception e){
-            Toast.makeText(this, "리뷰 정보를 불러오는데에 실패했습니다.", Toast.LENGTH_SHORT).show();
+            toast("리뷰 정보를 불러오는데에 실패했습니다.");
         }
 
         try {
             generalbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Main.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    change_Tap_Premium(Main.class);
                 }
             });
             dietbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Diet.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    change_Tap_Premium(Diet.class);
                 }
             });
             premiumbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Premium.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    change_Tap_Premium(Premium.class);
                 }
             });
             etcbutton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Etc.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(intent);
+                    change_Tap_Premium(Etc.class);
                 }
             });
         }catch(Exception e){
-            Toast.makeText(this, "탭 변경을 실패했습니다.", Toast.LENGTH_SHORT).show();
+            toast("탭 변경을 실패했습니다.");
         }
 
         try {
             premium_menu1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Menu.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "premium_menu");
-                    bundle.putString("value2", "menu1");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Premium("menu1");
                 }
             });
             premium_menu2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Menu.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "premium_menu");
-                    bundle.putString("value2", "menu2");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Premium("menu2");
                 }
             });
             premium_menu3.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Menu.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "premium_menu");
-                    bundle.putString("value2", "menu3");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Premium("menu3");
                 }
             });
             premium_menu4.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Menu.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "premium_menu");
-                    bundle.putString("value2", "menu4");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Premium("menu4");
                 }
             });
             premium_menu5.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Premium.this, Menu.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    Bundle bundle = new Bundle();
-                    bundle.putString("value1", "premium_menu");
-                    bundle.putString("value2", "menu5");
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+                    select_Menu_Premium("menu5");
                 }
             });
         }catch(Exception e){
-            Toast.makeText(this, "메뉴 정보를 불러오는데에 실패했습니다.", Toast.LENGTH_SHORT).show();
+            toast("메뉴 정보를 불러오는데에 실패했습니다.");
         }
-
 
 
         if(FirebaseAuth.getInstance().getCurrentUser() == null) {
-            Intent intent = new Intent(Premium.this, Login.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            check_Login_Premium();
         }
 
     }
+    public void check_Login_Premium(){
+        Intent intent = new Intent(Premium.this, Login.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+        toast("로그인이 되어 있지 않습니다.");
+    }
 
+    public void change_Tap_Premium(Class<?> targetClass) {
+        Intent intent = new Intent(Premium.this, targetClass);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+
+    public void select_Menu_Premium(String menu_name){
+        Intent intent = new Intent(Premium.this, Menu.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        Bundle bundle = new Bundle();
+        bundle.putString("value1", "premium_menu");
+        bundle.putString("value2", menu_name);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    public void toast(String text){
+        Toast.makeText(Premium.this, text, Toast.LENGTH_SHORT).show();
+    }
 }

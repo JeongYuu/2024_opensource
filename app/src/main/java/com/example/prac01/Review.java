@@ -41,6 +41,8 @@ public class Review extends AppCompatActivity {
         review_register = findViewById(R.id.review_register);
         review_menu_name = findViewById(R.id.review_menu_name);
         recyclerview = findViewById(R.id.recyclerview);
+        mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
 
         Intent intent = getIntent();
 
@@ -50,40 +52,43 @@ public class Review extends AppCompatActivity {
         review_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!review_input.getText().toString().equals("")) {
-                    mAuth = FirebaseAuth.getInstance();
-                    db = FirebaseFirestore.getInstance();
-                    ReviewInfo reviewInfo = new ReviewInfo(mAuth.getCurrentUser().getUid(), review_menu_name.getText().toString(), review_input.getText().toString());
-                    db = FirebaseFirestore.getInstance();
-                    db.collection("Review").document(review_menu_name.getText().toString()).collection("review").document().set(reviewInfo);
-                    db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("review").document().set(reviewInfo);
-                    review_input.setText("");
-                }
+                registerReview();
             }
 
         });
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
         db.collection("Review")
                 .document(review_menu_name.getText().toString())
                 .collection("review")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot value, @Nullable FirebaseFirestoreException error) {
-                        ArrayList<ReviewInfo> reviewInfoList = new ArrayList<>();
-
-                        for(QueryDocumentSnapshot documentSnapshot : value) {
-                            ReviewInfo reviewInfo = documentSnapshot.toObject(ReviewInfo.class);
-                            reviewInfoList.add(reviewInfo);
-                        }
-
-                        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Review.this);
-                        recyclerview.setLayoutManager(layoutManager);
-                        reviewAdapter = new ReviewAdapter(reviewInfoList, Review.this);
-                        recyclerview.setAdapter(reviewAdapter);
+                        setReview(value);
                     }
                 });
+    }
+
+    public void registerReview(){
+        if(!review_input.getText().toString().equals("")) {
+            ReviewInfo reviewInfo = new ReviewInfo(mAuth.getCurrentUser().getUid(), review_menu_name.getText().toString(), review_input.getText().toString());
+            db.collection("Review").document(review_menu_name.getText().toString()).collection("review").document().set(reviewInfo);
+            db.collection("user").document(mAuth.getCurrentUser().getUid()).collection("review").document().set(reviewInfo);
+            review_input.setText("");
+        }
+    }
+
+    public void setReview(QuerySnapshot value){
+        ArrayList<ReviewInfo> reviewInfoList = new ArrayList<>();
+
+        for(QueryDocumentSnapshot documentSnapshot : value) {
+            ReviewInfo reviewInfo = documentSnapshot.toObject(ReviewInfo.class);
+            reviewInfoList.add(reviewInfo);
+        }
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(Review.this);
+        recyclerview.setLayoutManager(layoutManager);
+        reviewAdapter = new ReviewAdapter(reviewInfoList, Review.this);
+        recyclerview.setAdapter(reviewAdapter);
     }
 
 }
