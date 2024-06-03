@@ -59,7 +59,7 @@ public class SignUp extends AppCompatActivity {
                                 Intent intent = new Intent(SignUp.this, Main.class);
                                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
-                            } else if (task.getException() != null) {
+                            }else{
                                 String exceptionMessage = task.getException().toString();
                                 if (exceptionMessage.contains("FirebaseAuthWeakPasswordException")) {
                                     toast("비밀번호는 6자리 이상이어야 합니다.");
